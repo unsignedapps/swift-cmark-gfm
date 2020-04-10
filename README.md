@@ -155,6 +155,31 @@ You can cross-compile a Windows binary and dll on linux if you have the
 
 The binaries will be in `build-mingw/windows/bin`.
 
+Installing (Swift Package Manager)
+----------------------------------
+
+To include `swift-cmark-gfm` in your Swift package add the following dependency to your Package.swift:
+
+```swift
+.package(url: "https://github.com/unsignedapps/swift-cmark-gfm.git", from: "0.16.5.1")
+```
+
+**Note:** The first version that has Swift Package Manager support is 0.16.5.1.
+
+Don't forget to include the library in your target:
+
+```swift
+.target(name: "BestExampleApp", dependencies: [ "swift-cmark-gfm" ])
+```
+
+And import the module in your code:
+
+```swift
+import Foundation
+import cmark_gfm
+```
+You can find the Swift docs by ⌘-clicking on the import statement and choosing _Jump to Definition_, or by googling the cmark man pages. The interface is the same as the C one.
+
 Usage
 -----
 
